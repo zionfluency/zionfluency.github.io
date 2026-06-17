@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zion — De travar em inglês a fechar contratos internacionais</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@700;800&display=swap');
+
+:root {
+  --orange: #F97316;
+  --orange-dark: #C2410C;
+  --orange-light: #FFF7ED;
+  --black: #0A0A0A;
+  --black-2: #111111;
+  --black-3: #1A1A1A;
+  --black-4: #222222;
+  --gray: #737373;
+  --gray-light: #A3A3A3;
+  --white: #FFFFFF;
+  --white-soft: #F5F5F5;
+  --border: rgba(255,255,255,0.08);
+  --border-orange: rgba(249,115,22,0.3);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--black);
+  color: var(--white);
+  line-height: 1.6;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+/* ── TIPOGRAFIA ── */
+.display {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(10,10,10,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 0.5px solid var(--border);
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.z-mark {
+  width: 36px;
+  height: 36px;
+  background: var(--orange);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  color: #000;
+}
+
+.nav-name {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--white);
+  letter-spacing: .3px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-links a {
+  color: var(--gray-light);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--white); }
+
+.nav-cta {
+  background: var(--orange);
+  color: #000 !important;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px !important;
+  transition: background .2s !important;
+}
+.nav-cta:hover { background: var(--orange-dark) !important; color: var(--white) !important; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 5% 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -200px; left: 50%;
+  transform: translateX(-50%);
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(249,115,22,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(249,115,22,0.1);
+  border: 0.5px solid var(--border-orange);
+  border-radius: 99px;
+  padding: 6px 16px;
+  font-size: 13px;
+  color: var(--orange);
+  font-weight: 500;
+  margin-bottom: 32px;
+  letter-spacing: .3px;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--orange);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: .5; transform: scale(1.3); }
+}
+
+.hero-title {
+  font-size: clamp(42px, 7vw, 88px);
+  max-width: 900px;
+  margin-bottom: 24px;
+}
+
+.hero-title .line-orange { color: var(--orange); }
+.hero-title .line-gray { color: var(--gray); }
+
+.hero-sub {
+  font-size: clamp(16px, 2vw, 20px);
+  color: var(--gray-light);
+  max-width: 580px;
+  line-height: 1.7;
+  margin-bottom: 48px;
+}
+
+.hero-sub strong { color: var(--white); font-weight: 500; }
+
+.hero-btns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 64px;
+}
+
+.btn-primary {
+  background: var(--orange);
+  color: #000;
+  padding: 16px 32px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background .2s, transform .15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-primary:hover { background: var(--orange-dark); color: var(--white); transform: translateY(-1px); }
+
+.btn-secondary {
+  background: transparent;
+  color: var(--white);
+  padding: 16px 32px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  border: 0.5px solid var(--border);
+  transition: border-color .2s, transform .15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-secondary:hover { border-color: rgba(255,255,255,0.3); transform: translateY(-1px); }
+
+.hero-stats {
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero-stat { text-align: center; }
+.hero-stat-num {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 32px;
+  color: var(--orange);
+  display: block;
+}
+.hero-stat-lbl {
+  font-size: 13px;
+  color: var(--gray);
+  display: block;
+  margin-top: 2px;
+}
+
+/* ── SEÇÕES GERAIS ── */
+section { padding: 100px 5%; }
+
+.container { max-width: 1100px; margin: 0 auto; }
+
+.section-eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 16px;
+  display: block;
+}
+
+.section-title {
+  font-size: clamp(32px, 4vw, 52px);
+  margin-bottom: 20px;
+}
+
+.section-sub {
+  font-size: 18px;
+  color: var(--gray-light);
+  line-height: 1.7;
+  max-width: 600px;
+}
+
+/* ── DOR ── */
+.dor-section { background: var(--black-2); }
+
+.dor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 0.5px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-top: 56px;
+}
+
+.dor-card {
+  background: var(--black-2);
+  padding: 32px 28px;
+  transition: background .2s;
+}
+.dor-card:hover { background: var(--black-3); }
+
+.dor-icon {
+  width: 44px; height: 44px;
+  border-radius: 10px;
+  background: rgba(249,115,22,0.1);
+  border: 0.5px solid var(--border-orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.dor-quote {
+  font-size: 14px;
+  color: var(--gray-light);
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  border-left: 2px solid var(--orange);
+  padding-left: 14px;
+}
+
+.dor-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.dor-desc {
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+/* ── CONCEITO ── */
+.conceito-section { background: var(--black); }
+
+.conceito-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.conceito-visual {
+  background: var(--black-3);
+  border: 0.5px solid var(--border);
+  border-radius: 20px;
+  padding: 48px 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.conceito-visual::before {
+  content: 'Z';
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 200px;
+  color: rgba(249,115,22,0.04);
+  position: absolute;
+  bottom: -40px; right: -20px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.conceito-pillar {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 20px 0;
+  border-bottom: 0.5px solid var(--border);
+}
+.conceito-pillar:last-child { border-bottom: none; }
+
+.pillar-num {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  color: var(--orange);
+  min-width: 28px;
+  padding-top: 2px;
+}
+
+.pillar-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.pillar-desc {
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.5;
+}
+
+.conceito-text .section-sub {
+  margin-bottom: 32px;
+}
+
+.conceito-promise {
+  background: rgba(249,115,22,0.08);
+  border: 0.5px solid var(--border-orange);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.promise-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 10px;
+  display: block;
+}
+
+.promise-text {
+  font-size: 16px;
+  color: var(--white);
+  line-height: 1.6;
+}
+
+/* ── MÉTODO ── */
+.metodo-section { background: var(--black-2); }
+
+.metodo-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  margin-top: 56px;
+}
+
+.metodo-step {
+  background: var(--black-3);
+  border: 0.5px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 24px;
+  position: relative;
+  transition: border-color .2s, transform .2s;
+}
+.metodo-step:hover {
+  border-color: var(--border-orange);
+  transform: translateY(-4px);
+}
+
+.step-badge {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 11px;
+  color: var(--orange);
+  background: rgba(249,115,22,0.1);
+  border: 0.5px solid var(--border-orange);
+  border-radius: 99px;
+  padding: 3px 10px;
+  display: inline-block;
+  margin-bottom: 16px;
+  letter-spacing: .05em;
+}
+
+.step-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.step-desc {
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+/* ── DIFERENCIAIS ── */
+.diff-section { background: var(--black); }
+
+.diff-vs {
+  display: grid;
+  grid-template-columns: 1fr 80px 1fr;
+  gap: 0;
+  margin-top: 56px;
+  align-items: start;
+}
+
+.diff-col {
+  background: var(--black-3);
+  border: 0.5px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.diff-col.zion-col {
+  border-color: var(--border-orange);
+  background: rgba(249,115,22,0.03);
+}
+
+.diff-col-head {
+  padding: 20px 24px;
+  border-bottom: 0.5px solid var(--border);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gray);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.diff-col.zion-col .diff-col-head {
+  color: var(--orange);
+  border-color: var(--border-orange);
+}
+
+.diff-col-head .dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--gray-light);
+}
+
+.diff-col.zion-col .diff-col-head .dot {
+  background: var(--orange);
+}
+
+.diff-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px 24px;
+  border-bottom: 0.5px solid var(--border);
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.5;
+}
+.diff-item:last-child { border-bottom: none; }
+
+.diff-item.zion-item { color: var(--white); }
+
+.diff-x { color: #EF4444; font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+.diff-check { color: var(--orange); font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+
+.diff-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 60px;
+  gap: 12px;
+}
+
+.vs-badge {
+  width: 44px; height: 44px;
+  background: var(--black-4);
+  border: 0.5px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gray);
+  letter-spacing: .05em;
+}
+
+.vs-line {
+  width: 0.5px;
+  height: 300px;
+  background: var(--border);
+}
+
+/* ── PLANOS ── */
+.planos-section { background: var(--black-2); }
+
+.planos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 56px;
+  align-items: start;
+}
+
+.plano-card {
+  background: var(--black-3);
+  border: 0.5px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform .2s;
+}
+.plano-card:hover { transform: translateY(-6px); }
+
+.plano-card.destaque {
+  border: 2px solid var(--orange);
+  background: rgba(249,115,22,0.04);
+  transform: translateY(-8px);
+}
+.plano-card.destaque:hover { transform: translateY(-14px); }
+
+.plano-badge {
+  background: var(--orange);
+  color: #000;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 7px;
+}
+
+.plano-head {
+  padding: 28px 28px 20px;
+  border-bottom: 0.5px solid var(--border);
+}
+
+.plano-nome {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+
+.plano-desc {
+  font-size: 13px;
+  color: var(--gray);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.plano-preco {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.preco-moeda {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--gray-light);
+}
+
+.preco-valor {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 44px;
+  color: var(--white);
+  line-height: 1;
+}
+
+.plano-card.destaque .preco-valor { color: var(--orange); }
+
+.preco-periodo {
+  font-size: 14px;
+  color: var(--gray);
+  margin-left: 4px;
+}
+
+.plano-body { padding: 24px 28px; }
+
+.plano-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 9px 0;
+  border-bottom: 0.5px solid var(--border);
+  font-size: 14px;
+  color: var(--gray-light);
+  line-height: 1.4;
+}
+.plano-feature:last-of-type { border-bottom: none; margin-bottom: 24px; }
+
+.feat-check { color: var(--orange); flex-shrink: 0; font-size: 15px; margin-top: 1px; }
+.feat-check.dim { color: var(--gray-light); opacity: 0.3; }
+
+.plano-cta {
+  display: block;
+  text-align: center;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all .2s;
+  margin: 0 28px 28px;
+}
+
+.plano-cta.outline {
+  border: 0.5px solid var(--border);
+  color: var(--white);
+}
+.plano-cta.outline:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+.plano-cta.filled {
+  background: var(--orange);
+  color: #000;
+}
+.plano-cta.filled:hover {
+  background: var(--orange-dark);
+  color: var(--white);
+}
+
+.planos-note {
+  text-align: center;
+  margin-top: 32px;
+  font-size: 14px;
+  color: var(--gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* ── FAQ ── */
+.faq-section { background: var(--black); }
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 56px;
+}
+
+.faq-item {
+  background: var(--black-3);
+  border: 0.5px solid var(--border);
+  border-radius: 14px;
+  padding: 24px 24px;
+  cursor: pointer;
+  transition: border-color .2s;
+}
+.faq-item:hover { border-color: var(--border-orange); }
+
+.faq-q {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.faq-q::after {
+  content: '+';
+  color: var(--orange);
+  font-size: 20px;
+  font-weight: 400;
+  flex-shrink: 0;
+  margin-top: -2px;
+}
+
+.faq-a {
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.7;
+}
+
+/* ── CTA FINAL ── */
+.cta-final {
+  background: var(--black-2);
+  padding: 120px 5%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-final::before {
+  content: '';
+  position: absolute;
+  bottom: -200px; left: 50%;
+  transform: translateX(-50%);
+  width: 800px; height: 600px;
+  background: radial-gradient(circle, rgba(249,115,22,0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cta-final .display {
+  font-size: clamp(36px, 5vw, 64px);
+  max-width: 800px;
+  margin: 0 auto 24px;
+}
+
+.cta-final .section-sub {
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.cta-final-btns {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--black);
+  border-top: 0.5px solid var(--border);
+  padding: 40px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-logo { display: flex; align-items: center; gap: 10px; }
+.footer-copy { font-size: 13px; color: var(--gray); }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { font-size: 13px; color: var(--gray); text-decoration: none; transition: color .2s; }
+.footer-links a:hover { color: var(--white); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  nav { padding: 0 4%; }
+  .nav-links { display: none; }
+  section { padding: 70px 4%; }
+  .conceito-inner { grid-template-columns: 1fr; gap: 40px; }
+  .diff-vs { grid-template-columns: 1fr; }
+  .diff-center { display: none; }
+  .planos-grid { grid-template-columns: 1fr; }
+  .plano-card.destaque { transform: none; }
+  .faq-grid { grid-template-columns: 1fr; }
+  footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="z-mark">Z</div>
+    <span class="nav-name">ZION</span>
+  </a>
+  <div class="nav-links">
+    <a href="#conceito">Conceito</a>
+    <a href="#metodo">Método</a>
+    <a href="#planos">Planos</a>
+    <a href="#faq">FAQ</a>
+    <a href="https://wa.me/5511999999999" class="nav-cta">Falar com a Zion</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Inglês para quem tem negócio</div>
+  <h1 class="display hero-title">
+    De travar em inglês<br>
+    <span class="line-gray">a</span> fechar contratos<br>
+    <span class="line-orange">internacionais.</span>
+  </h1>
+  <p class="hero-sub">
+    A Zion não é um curso de inglês.<br>
+    É o <strong>método que transforma o idioma em resultado</strong> —
+    para empresas brasileiras que querem crescer além das fronteiras.
+  </p>
+  <div class="hero-btns">
+    <a href="#planos" class="btn-primary">
+      Ver os planos
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <a href="#conceito" class="btn-secondary">
+      Entender o método
+    </a>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <span class="hero-stat-num">3</span>
+      <span class="hero-stat-lbl">pilares do método</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">30</span>
+      <span class="hero-stat-lbl">dias pro primeiro resultado</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">100%</span>
+      <span class="hero-stat-lbl">focado no seu negócio</span>
+    </div>
+  </div>
+</section>
+
+<!-- DOR -->
+<section class="dor-section">
+  <div class="container">
+    <span class="section-eyebrow">A dor que ninguém resolve</span>
+    <h2 class="display section-title">Você reconhece<br>alguma dessas situações?</h2>
+    <p class="section-sub">São as queixas mais comuns de empreendedores brasileiros. E nenhum app ou curso genérico foi feito para resolver isso.</p>
+
+    <div class="dor-grid">
+      <div class="dor-card">
+        <div class="dor-icon">✉️</div>
+        <p class="dor-quote">"Fico horas tentando escrever um e-mail em inglês e ainda peço pra alguém revisar antes de enviar."</p>
+        <p class="dor-title">O e-mail que nunca sai</p>
+        <p class="dor-desc">Você sabe o que quer dizer. Mas na hora de escrever para um cliente ou parceiro internacional, trava.</p>
+      </div>
+      <div class="dor-card">
+        <div class="dor-icon">📞</div>
+        <p class="dor-quote">"Em call com cliente gringo meu coração dispara. Eu entendo, mas as palavras não saem."</p>
+        <p class="dor-title">A reunião que você evita</p>
+        <p class="dor-desc">O medo de não conseguir se expressar faz você adiar reuniões, perder oportunidades e passar a imagem errada.</p>
+      </div>
+      <div class="dor-card">
+        <div class="dor-icon">💸</div>
+        <p class="dor-quote">"Já perdi contrato porque demorei demais pra responder — na verdade, estava esperando alguém traduzir."</p>
+        <p class="dor-title">O negócio que foi para o concorrente</p>
+        <p class="dor-desc">Cada hora que você leva pra responder em inglês é uma hora que seu concorrente usa para fechar o mesmo cliente.</p>
+      </div>
+      <div class="dor-card">
+        <div class="dor-icon">📚</div>
+        <p class="dor-quote">"Estudei anos de inglês, fiz curso, tenho app com streak de 300 dias. Ainda trava na hora de falar."</p>
+        <p class="dor-title">O método que não funciona para você</p>
+        <p class="dor-desc">Gramática, vocabulário, exercícios. Tudo isso sem nenhuma conexão com a situação real do seu negócio.</p>
+      </div>
+      <div class="dor-card">
+        <div class="dor-icon">🤐</div>
+        <p class="dor-quote">"Tenho vergonha do meu sotaque. Sinto que o cliente me leva menos a sério por causa disso."</p>
+        <p class="dor-title">A insegurança que paralisa</p>
+        <p class="dor-desc">O medo de errar, de soar amador, de não ser levado a sério — isso é mais paralisante do que o inglês em si.</p>
+      </div>
+      <div class="dor-card">
+        <div class="dor-icon">⏰</div>
+        <p class="dor-quote">"Não tenho tempo pra estudar inglês com aula toda semana. Meu negócio não para."</p>
+        <p class="dor-title">O tempo que não existe</p>
+        <p class="dor-desc">Qualquer método que exige consistência de horário falha para quem tem agenda de empresário. E você sabe disso.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONCEITO -->
+<section class="conceito-section" id="conceito">
+  <div class="container">
+    <span class="section-eyebrow">O conceito Zion</span>
+    <h2 class="display section-title">Inglês por situação.<br><span style="color:var(--orange)">Não por gramática.</span></h2>
+
+    <div class="conceito-inner">
+      <div class="conceito-visual">
+        <div class="conceito-pillar">
+          <span class="pillar-num">01</span>
+          <div>
+            <p class="pillar-name">Situação real, não teoria</p>
+            <p class="pillar-desc">Cada módulo é construído em torno de uma situação concreta do seu negócio: fechar proposta, conduzir reunião, responder cliente, negociar prazo. Você pratica o que vai usar.</p>
+          </div>
+        </div>
+        <div class="conceito-pillar">
+          <span class="pillar-num">02</span>
+          <div>
+            <p class="pillar-name">Mentor fixo, não roleta</p>
+            <p class="pillar-desc">Diferente das plataformas onde o professor some, na Zion você tem um mentor que conhece seu negócio, sua meta e o seu bloqueio específico. Continuidade gera resultado.</p>
+          </div>
+        </div>
+        <div class="conceito-pillar">
+          <span class="pillar-num">03</span>
+          <div>
+            <p class="pillar-name">Resultado mensurável</p>
+            <p class="pillar-desc">Cada módulo termina com um entregável real: um e-mail enviado, uma proposta escrita, uma reunião simulada e gravada. Você sai com algo concreto nas mãos.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="conceito-text">
+        <p class="section-sub">A Zion nasceu de uma pesquisa profunda sobre por que empreendedores brasileiros estudam inglês por anos e ainda travam na hora que importa.</p>
+        <p class="section-sub" style="margin-top:16px; margin-bottom:32px;">A resposta é sempre a mesma: o método não foi feito para quem tem negócio. Foi feito para estudante. Para quem tem tempo. Para quem pode repetir a mesma gramática por semanas.</p>
+        <div class="conceito-promise">
+          <span class="promise-label">A promessa Zion</span>
+          <p class="promise-text">Em 30 dias praticando as situações certas, do jeito certo, com o suporte certo — você vai conseguir escrever um e-mail de proposta, conduzir uma reunião básica e responder um cliente internacional. Sem depender de ninguém.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MÉTODO -->
+<section class="metodo-section" id="metodo">
+  <div class="container">
+    <span class="section-eyebrow">Como funciona</span>
+    <h2 class="display section-title">O Método Zion<br>em 4 etapas</h2>
+    <p class="section-sub">Você não começa pela gramática. Você começa pela situação de negócio que mais te trava hoje.</p>
+
+    <div class="metodo-steps">
+      <div class="metodo-step">
+        <span class="step-badge">Etapa 1</span>
+        <p class="step-title">Diagnóstico do seu negócio</p>
+        <p class="step-desc">Identificamos as 3 situações em inglês que mais custam negócio para você hoje. É aqui que começa — não na gramática, mas na dor real.</p>
+      </div>
+      <div class="metodo-step">
+        <span class="step-badge">Etapa 2</span>
+        <p class="step-title">Trilha personalizada</p>
+        <p class="step-desc">Com base no diagnóstico, você segue a trilha certa: e-mail, reunião, negociação, proposta ou presença digital. Módulos curtos, diretos, aplicáveis.</p>
+      </div>
+      <div class="metodo-step">
+        <span class="step-badge">Etapa 3</span>
+        <p class="step-title">Prática com mentor</p>
+        <p class="step-desc">Sessões ao vivo com seu mentor fixo — focadas no seu negócio, não em exercício genérico. Você pratica situações reais com feedback imediato.</p>
+      </div>
+      <div class="metodo-step">
+        <span class="step-badge">Etapa 4</span>
+        <p class="step-title">Entregável concreto</p>
+        <p class="step-desc">Cada ciclo termina com algo real: um e-mail enviado, uma reunião gravada com análise, uma proposta revisada. Progresso que você vê e sente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIAL -->
+<section class="diff-section">
+  <div class="container">
+    <span class="section-eyebrow">Por que a Zion é diferente</span>
+    <h2 class="display section-title">O que os outros entregam.<br><span style="color:var(--orange)">O que a Zion entrega.</span></h2>
+
+    <div class="diff-vs">
+      <div class="diff-col">
+        <div class="diff-col-head">
+          <span class="dot"></span>
+          Preply, Cambly, Lingoda, Duolingo
+        </div>
+        <div class="diff-item"><span class="diff-x">✕</span>Professor diferente em cada aula — sem continuidade</div>
+        <div class="diff-item"><span class="diff-x">✕</span>Conteúdo genérico desconectado do seu negócio</div>
+        <div class="diff-item"><span class="diff-x">✕</span>Você gerencia seu próprio aprendizado</div>
+        <div class="diff-item"><span class="diff-x">✕</span>Minutos e aulas expiram se você não usar</div>
+        <div class="diff-item"><span class="diff-x">✕</span>Sem resultado mensurável — só "horas de aula"</div>
+        <div class="diff-item"><span class="diff-x">✕</span>Suporte por chatbot quando algo dá errado</div>
+      </div>
+
+      <div class="diff-center">
+        <div class="vs-badge">VS</div>
+        <div class="vs-line"></div>
+      </div>
+
+      <div class="diff-col zion-col">
+        <div class="diff-col-head">
+          <span class="dot"></span>
+          Método Zion
+        </div>
+        <div class="diff-item zion-item"><span class="diff-check">✓</span>Mentor fixo que conhece você e o seu negócio</div>
+        <div class="diff-item zion-item"><span class="diff-check">✓</span>Conteúdo por situação real: e-mail, reunião, proposta</div>
+        <div class="diff-item zion-item"><span class="diff-check">✓</span>Trilha estruturada — você só precisa aparecer</div>
+        <div class="diff-item zion-item"><span class="diff-check">✓</span>Sem penalidade para agenda de empresário</div>
+        <div class="diff-item zion-item"><span class="diff-check">✓</span>Entregável real a cada ciclo — progresso visível</div>
+        <div class="diff-item zion-item"><span class="diff-check">✓</span>Suporte humano — você não fica sozinho</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANOS -->
+<section class="planos-section" id="planos">
+  <div class="container">
+    <span class="section-eyebrow">Investimento</span>
+    <h2 class="display section-title">Escolha o plano<br>certo para o seu negócio</h2>
+    <p class="section-sub">Sem contrato de longo prazo. Sem penalidade se você precisar pausar. Sem minuto que expira.</p>
+
+    <div class="planos-grid">
+
+      <!-- COMEÇAR -->
+      <div class="plano-card">
+        <div class="plano-head">
+          <p class="plano-nome">Começar</p>
+          <p class="plano-desc">Para quem quer dar o primeiro passo com estrutura e comunidade.</p>
+          <div class="plano-preco">
+            <span class="preco-moeda">R$</span>
+            <span class="preco-valor">97</span>
+            <span class="preco-periodo">/mês</span>
+          </div>
+        </div>
+        <div class="plano-body">
+          <div class="plano-feature"><span class="feat-check">✓</span>Acesso a todos os módulos por situação de negócio</div>
+          <div class="plano-feature"><span class="feat-check">✓</span>Entrada na comunidade privada Zion</div>
+          <div class="plano-feature"><span class="feat-check">✓</span>1 correção de texto ou e-mail por semana</div>
+          <div class="plano-feature"><span class="feat-check">✓</span>Desafio semanal com entregável real</div>
+          <div class="plano-feature"><span class="feat-check dim">✓</span><span style="color:var(--gray)">Sessão 1-a-1 com mentor (não inclusa)</span></div>
+          <div class="plano-feature"><span class="feat-check dim">✓</span><span style="color:var(--gray)">Templates e banco de frases (não incluso)</span></div>
+          <a href="https://wa.me/5511999999999?text=Quero+saber+mais+sobre+o+Plano+Começar+da+Zion" class="plano-cta outline">Começar agora</a>
+        </div>
+      </div>
+
+      <!-- CRESCER -->
+      <div class="plano-card destaque">
+        <div class="plano-badge">Mais popular</div>
+        <div class="plano-head">
+          <p class="plano-nome">Crescer</p>
+          <p class="plano-desc">Para quem tem negócio e quer resultado rápido e aplicado.</p>
+          <div class="plano-preco">
+            <span class="preco-moeda">R$</span>
+            <span class="preco-valor">247</span>
+            <span class="preco-periodo">/mês</span>
+          </div>
+        </div>
+        <div class="plano-body">
+          <div class="plano-feature"><span class="feat-check">✓</span>Tudo do plano Começar</div>
+          <div class="plano-feature"><span class="feat-check">✓</span>1 sessão ao vivo 1-a-1 por mês com seu mentor</div>
+          <div class="plano-feature"><span class="feat-check">✓</span>Banco de templates: e-mails, propostas, LinkedIn</div>
+          <div class="plano-feature"><span class="feat-check">✓</span>Simulação de reunião mensal gravada com feedback</div>
+          <div class="plano-feature"><span class="feat-check">✓</span>Pausa sem penalidade — sua agenda de empresário</div>
+          <div class="plano-feature"><span class="feat-check dim">✓</span><span style="color:var(--gray)">WhatsApp direto com mentor (não incluso)</span></div>
+          <a href="https://wa.me/5511999999999?text=Quero+saber+mais+sobre+o+Plano+Crescer+da+Zion" class="plano-cta filled">Quero crescer</a>
+        </div>
+      </div>
+
+      <!-- ESCALAR -->
+      <div class="plano-card">
+        <div class="plano-head">
+          <p class="plano-nome">Escalar</p>
+          <p class="plano-desc">Aceleração intensiva para quem quer resultado em semanas, não meses.</p>
+          <div class="plano-preco">
+            <span class="preco-moeda">R$</span>
+            <span class="preco-valor">597</span>
+            <span class="preco-periodo">/mês</span>
+          </div>
+        </div>
+        <div class="plano-body">
+          <div class="plano-feature"><span class="feat-check">✓</span>Tudo do plano Crescer</div>
+          <div class="plano-feature"><span class="feat-check">✓</span>4 sessões 1-a-1 por mês — toda semana com mentor</div>
+          <div class="plano-feature"><span class="feat-check">✓</span>Revisão de materiais reais: site, proposta, pitch</div>
+          <div class="plano-feature"><span class="feat-check">✓</span>WhatsApp direto com mentor para dúvidas urgentes</div>
+          <div class="plano-feature"><span class="feat-check">✓</span>Grupo VIP exclusivo Escalar</div>
+          <div class="plano-feature"><span class="feat-check">✓</span>Prioridade de agendamento e suporte</div>
+          <a href="https://wa.me/5511999999999?text=Quero+saber+mais+sobre+o+Plano+Escalar+da+Zion" class="plano-cta outline">Quero escalar</a>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="planos-note">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Sem contrato de fidelidade · Sem cobrança surpresa · Cancelamento a qualquer momento
+    </p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="container">
+    <span class="section-eyebrow">Dúvidas frequentes</span>
+    <h2 class="display section-title">Antes de decidir,<br>leia isso.</h2>
+
+    <div class="faq-grid">
+      <div class="faq-item">
+        <p class="faq-q">Preciso ter nível avançado de inglês para entrar?</p>
+        <p class="faq-a">Não. O Método Zion funciona para qualquer nível — do básico ao intermediário. O que importa não é o nível atual, é a situação de negócio que você quer resolver. Começamos pelo diagnóstico exato do seu bloqueio.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Quanto tempo por semana eu preciso dedicar?</p>
+        <p class="faq-a">O plano Começar funciona com 30 a 45 minutos por semana. O plano Crescer recomenda 1 hora semanal incluindo a sessão ao vivo. Foram desenhados para agenda de empreendedor — não de estudante.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">O que acontece se eu precisar pausar um mês?</p>
+        <p class="faq-a">No plano Crescer e Escalar, você pode pausar sem penalidade. Seu conteúdo e seu mentor continuam disponíveis quando você voltar. Sem aula que expira, sem dinheiro perdido.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Como funciona a sessão 1-a-1 com o mentor?</p>
+        <p class="faq-a">A sessão é por videoconferência, com duração de 50 minutos. O mentor já conhece seu negócio e seu progresso. A pauta é sempre baseada em situações reais — não em exercícios genéricos de gramática.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Em quanto tempo vou ver resultado real?</p>
+        <p class="faq-a">Na maioria dos casos, o primeiro resultado prático acontece em 30 dias: um e-mail enviado sem depender de tradução, uma resposta a cliente em inglês, uma reunião conduzida sem travar. Resultado, não promessa.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Posso mudar de plano depois de entrar?</p>
+        <p class="faq-a">Sim. Você pode fazer upgrade ou downgrade a qualquer momento. Se começar no Plano Começar e querer adicionar sessões 1-a-1, a transição é imediata e o valor é proporcional ao período restante.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="container">
+    <h2 class="display">Seu próximo contrato<br>pode ser <span style="color:var(--orange)">em inglês.</span></h2>
+    <p class="section-sub">A Zion existe para que o idioma nunca mais seja o motivo pelo qual uma empresa brasileira perde uma oportunidade internacional.</p>
+    <div class="cta-final-btns">
+      <a href="#planos" class="btn-primary">
+        Ver os planos
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="https://wa.me/5511999999999?text=Quero+conhecer+a+Zion" class="btn-secondary">
+        Falar com a equipe Zion
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <div class="z-mark">Z</div>
+    <span class="nav-name">ZION</span>
+  </div>
+  <p class="footer-copy">© 2025 Zion. Todos os direitos reservados.</p>
+  <div class="footer-links">
+    <a href="mailto:contato@zion.com.br">contato@zion.com.br</a>
+    <a href="https://wa.me/5511999999999">WhatsApp</a>
+    <a href="https://instagram.com/zioninglesnegocio">Instagram</a>
+  </div>
+</footer>
+
+</body>
+</html>
